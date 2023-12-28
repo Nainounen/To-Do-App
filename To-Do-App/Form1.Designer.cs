@@ -28,222 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            vScrollBar1 = new VScrollBar();
-            tabPage2 = new TabPage();
-            vScrollBar2 = new VScrollBar();
-            tabPage3 = new TabPage();
-            vScrollBar3 = new VScrollBar();
-            tabPage4 = new TabPage();
-            vScrollBar4 = new VScrollBar();
-            monthCalendar1 = new MonthCalendar();
+            components = new System.ComponentModel.Container();
+            comboBox1 = new ComboBox();
             button1 = new Button();
             label1 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label2 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
             dateTimePicker1 = new DateTimePicker();
             label3 = new Label();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
-            tabPage3.SuspendLayout();
-            tabPage4.SuspendLayout();
+            dgv = new DataGridView();
+            titel = new DataGridViewTextBoxColumn();
+            beschreibung = new DataGridViewTextBoxColumn();
+            kategorie = new DataGridViewTextBoxColumn();
+            datum = new DataGridViewTextBoxColumn();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            toolStripComboBox1 = new ToolStripComboBox();
+            toolStripTextBox1 = new ToolStripTextBox();
+            toolStripComboBox2 = new ToolStripComboBox();
+            cmdedit = new Button();
+            cmddelete = new Button();
+            cmdsave = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // tabControl1
+            // comboBox1
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Controls.Add(tabPage4);
-            tabControl1.Location = new Point(0, 45);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1052, 415);
-            tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            tabPage1.Controls.Add(vScrollBar1);
-            tabPage1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1044, 382);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "All";
-            tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // vScrollBar1
-            // 
-            vScrollBar1.Location = new Point(1018, 0);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(26, 386);
-            vScrollBar1.TabIndex = 2;
-            // 
-            // tabPage2
-            // 
-            tabPage2.Controls.Add(vScrollBar2);
-            tabPage2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1044, 382);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "School";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // vScrollBar2
-            // 
-            vScrollBar2.Location = new Point(1018, 0);
-            vScrollBar2.Name = "vScrollBar2";
-            vScrollBar2.Size = new Size(26, 386);
-            vScrollBar2.TabIndex = 1;
-            // 
-            // tabPage3
-            // 
-            tabPage3.Controls.Add(vScrollBar3);
-            tabPage3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            tabPage3.Location = new Point(4, 29);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1044, 382);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Work";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // vScrollBar3
-            // 
-            vScrollBar3.Location = new Point(1018, 0);
-            vScrollBar3.Name = "vScrollBar3";
-            vScrollBar3.Size = new Size(26, 386);
-            vScrollBar3.TabIndex = 2;
-            // 
-            // tabPage4
-            // 
-            tabPage4.Controls.Add(vScrollBar4);
-            tabPage4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            tabPage4.Location = new Point(4, 29);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1044, 382);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Home";
-            tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // vScrollBar4
-            // 
-            vScrollBar4.Location = new Point(1018, 0);
-            vScrollBar4.Name = "vScrollBar4";
-            vScrollBar4.Size = new Size(26, 386);
-            vScrollBar4.TabIndex = 2;
-            // 
-            // monthCalendar1
-            // 
-            monthCalendar1.CalendarDimensions = new Size(1, 2);
-            monthCalendar1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            monthCalendar1.Location = new Point(1064, 74);
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.TabIndex = 1;
+            comboBox1.FlatStyle = FlatStyle.System;
+            comboBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.Items.AddRange(new object[] { "School", "Work", "Home" });
+            comboBox1.Location = new Point(1062, 530);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(412, 45);
+            comboBox1.TabIndex = 13;
+            comboBox1.TabStop = false;
+            comboBox1.Text = "Kategorie Auswählen";
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(0, 192, 0);
             button1.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(7, 465);
+            button1.Location = new Point(646, 643);
             button1.Name = "button1";
-            button1.Size = new Size(117, 63);
+            button1.Size = new Size(406, 95);
             button1.TabIndex = 2;
-            button1.Text = "+";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Hinzufügen";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(146, 482);
+            label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(30, 674);
             label1.MaximumSize = new Size(1000, 50);
             label1.Name = "label1";
-            label1.Size = new Size(103, 41);
+            label1.Size = new Size(129, 50);
             label1.TabIndex = 3;
             label1.Text = "To-Do";
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = SystemColors.AppWorkspace;
-            textBox1.Location = new Point(293, 487);
+            textBox1.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.ForeColor = SystemColors.ActiveCaptionText;
+            textBox1.Location = new Point(218, 659);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(415, 38);
+            textBox1.Size = new Size(415, 65);
             textBox1.TabIndex = 4;
-            textBox1.Text = "Titel";
             // 
             // textBox2
             // 
             textBox2.BackColor = Color.White;
-            textBox2.ForeColor = Color.Gainsboro;
-            textBox2.Location = new Point(13, 537);
+            textBox2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.ForeColor = SystemColors.ActiveCaptionText;
+            textBox2.Location = new Point(13, 744);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(1039, 249);
+            textBox2.Size = new Size(620, 95);
             textBox2.TabIndex = 5;
-            textBox2.Text = "Beschreibung max. 2000 Zeichen";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(1064, 537);
+            label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(1157, 469);
             label2.MaximumSize = new Size(1000, 50);
             label2.Name = "label2";
-            label2.Size = new Size(163, 41);
+            label2.Size = new Size(202, 50);
             label2.TabIndex = 6;
             label2.Text = "Kategorie:";
             // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton1.Location = new Point(1064, 581);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(93, 32);
-            radioButton1.TabIndex = 7;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "School";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton2.Location = new Point(1214, 581);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(80, 32);
-            radioButton2.TabIndex = 8;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Work";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton3.Location = new Point(1351, 581);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(86, 32);
-            radioButton3.TabIndex = 9;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Home";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(1058, 619);
+            dateTimePicker1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.Location = new Point(1062, 582);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(373, 34);
+            dateTimePicker1.Size = new Size(412, 43);
             dateTimePicker1.TabIndex = 10;
             // 
             // label3
@@ -257,57 +138,153 @@
             label3.TabIndex = 11;
             label3.Text = "To-Do                                                                                                                                by Max and Nino               \r\n";
             // 
+            // dgv
+            // 
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv.Columns.AddRange(new DataGridViewColumn[] { titel, beschreibung, kategorie, datum });
+            dgv.Location = new Point(13, 74);
+            dgv.Name = "dgv";
+            dgv.RowHeadersWidth = 51;
+            dgv.RowTemplate.Height = 29;
+            dgv.Size = new Size(1039, 551);
+            dgv.TabIndex = 12;
+            // 
+            // titel
+            // 
+            titel.FillWeight = 85.56149F;
+            titel.HeaderText = "Titel";
+            titel.MinimumWidth = 6;
+            titel.Name = "titel";
+            // 
+            // beschreibung
+            // 
+            beschreibung.FillWeight = 85.56149F;
+            beschreibung.HeaderText = "Beschreibung";
+            beschreibung.MinimumWidth = 6;
+            beschreibung.Name = "beschreibung";
+            // 
+            // kategorie
+            // 
+            kategorie.FillWeight = 85.56149F;
+            kategorie.HeaderText = "Kategorie";
+            kategorie.MinimumWidth = 6;
+            kategorie.Name = "kategorie";
+            // 
+            // datum
+            // 
+            datum.FillWeight = 85.56149F;
+            datum.HeaderText = "Datum";
+            datum.MinimumWidth = 6;
+            datum.Name = "datum";
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripComboBox1, toolStripTextBox1, toolStripComboBox2 });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(182, 97);
+            // 
+            // toolStripComboBox1
+            // 
+            toolStripComboBox1.Name = "toolStripComboBox1";
+            toolStripComboBox1.Size = new Size(121, 28);
+            // 
+            // toolStripTextBox1
+            // 
+            toolStripTextBox1.Name = "toolStripTextBox1";
+            toolStripTextBox1.Size = new Size(100, 27);
+            // 
+            // toolStripComboBox2
+            // 
+            toolStripComboBox2.Name = "toolStripComboBox2";
+            toolStripComboBox2.Size = new Size(121, 28);
+            // 
+            // cmdedit
+            // 
+            cmdedit.BackColor = Color.Blue;
+            cmdedit.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cmdedit.Location = new Point(1062, 643);
+            cmdedit.Name = "cmdedit";
+            cmdedit.Size = new Size(406, 95);
+            cmdedit.TabIndex = 16;
+            cmdedit.Text = "Bearbeiten\r\n(keine Zeit mehr)";
+            cmdedit.UseVisualStyleBackColor = false;
+            // 
+            // cmddelete
+            // 
+            cmddelete.BackColor = Color.Red;
+            cmddelete.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cmddelete.Location = new Point(646, 744);
+            cmddelete.Name = "cmddelete";
+            cmddelete.Size = new Size(406, 95);
+            cmddelete.TabIndex = 17;
+            cmddelete.Text = "Löschen";
+            cmddelete.UseVisualStyleBackColor = false;
+            cmddelete.Click += cmddelete_Click;
+            // 
+            // cmdsave
+            // 
+            cmdsave.BackColor = Color.Purple;
+            cmdsave.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cmdsave.Location = new Point(1062, 744);
+            cmdsave.Name = "cmdsave";
+            cmdsave.Size = new Size(406, 95);
+            cmdsave.TabIndex = 18;
+            cmdsave.Text = "Speichern";
+            cmdsave.UseVisualStyleBackColor = false;
+            cmdsave.Click += cmdsave_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1480, 856);
+            Controls.Add(cmdsave);
+            Controls.Add(cmddelete);
+            Controls.Add(cmdedit);
+            Controls.Add(comboBox1);
+            Controls.Add(dgv);
             Controls.Add(label3);
             Controls.Add(dateTimePicker1);
-            Controls.Add(radioButton3);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
             Controls.Add(label2);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(button1);
-            Controls.Add(monthCalendar1);
-            Controls.Add(tabControl1);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Tag = "";
             Text = "Form1";
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
-            tabPage3.ResumeLayout(false);
-            tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
+            contextMenuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private TabPage tabPage4;
-        private MonthCalendar monthCalendar1;
-        private VScrollBar vScrollBar1;
-        private VScrollBar vScrollBar2;
-        private VScrollBar vScrollBar3;
-        private VScrollBar vScrollBar4;
         private Button button1;
         private Label label1;
         private TextBox textBox1;
         private TextBox textBox2;
         private Label label2;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
         private DateTimePicker dateTimePicker1;
         private Label label3;
+        private DataGridView dgv;
+        private ComboBox comboBox1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripComboBox toolStripComboBox1;
+        private ToolStripTextBox toolStripTextBox1;
+        private ToolStripComboBox toolStripComboBox2;
+        private Button cmdedit;
+        private Button cmddelete;
+        private Button cmdsave;
+        private DataGridViewTextBoxColumn titel;
+        private DataGridViewTextBoxColumn beschreibung;
+        private DataGridViewTextBoxColumn kategorie;
+        private DataGridViewTextBoxColumn datum;
     }
 }
