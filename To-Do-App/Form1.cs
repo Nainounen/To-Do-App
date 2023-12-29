@@ -5,6 +5,7 @@ using System.Diagnostics;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Diagnostics.Metrics;
 using System.Globalization;
+using System.Drawing.Text;
 
 // Leider hatte ich keine Zeit mehr für die CRUD-Funktion "Edit".
 // Ich wollte Max jedoch nicht zu viel Zeit für die Dokumentation nehmen.
@@ -18,7 +19,7 @@ namespace To_Do_App
         {
             InitializeComponent();
 
-          
+
             Datenladen();
         }
 
@@ -97,6 +98,7 @@ namespace To_Do_App
 
         {
 
+
             string neueKategorie = comboBox1.Text;
 
             if (!string.IsNullOrWhiteSpace(textBox1.Text) && !string.IsNullOrWhiteSpace(textBox2.Text) && !string.IsNullOrWhiteSpace(comboBox1.Text) && comboBox1.Text != "Kategorie Auswählen" && dateTimePicker1.Value >= DateTime.Now.AddDays(-1))
@@ -105,7 +107,7 @@ namespace To_Do_App
             }
             else
             {
-                MessageBox.Show("Bitte füllen Sie alle Felder korrekt aus.");
+                Spaltenabfrage();
             }
 
 
@@ -122,12 +124,45 @@ namespace To_Do_App
 
         }
 
+        private void Spaltenabfrage()
+        {
+
+            string Titelabfrage = "";
+            string Beschreibungabfrage = "";
+            string Kategorieabfrage = "";
+            string Datumabfrage = "";
+
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                Titelabfrage = "Titel, ";
+            }
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                Beschreibungabfrage = "Beschreibung, ";
+            }
+            if (string.IsNullOrWhiteSpace(comboBox1.Text))
+            {
+                Kategorieabfrage = "Kategorie, ";
+            }
+            if (comboBox1.Text == "Kategorie Auswählen")
+            {
+                Kategorieabfrage = "Kategorie, ";
+            }
+
+            if (dateTimePicker1.Value <= DateTime.Now.AddDays(-1))
+            {
+                Datumabfrage = "Datum, ";
+            }
+            MessageBox.Show($"Bitte füllen Sie alle Felder korrekt aus. ({Titelabfrage}{Beschreibungabfrage}{Kategorieabfrage}{Datumabfrage})");
+        }
+
         private void cmddelete_Click(object sender, EventArgs e)
         {
             if (dgv.Rows.Count > 0)
             {
-                int letzezeile = dgv.Rows.Count - 1;
-                dgv.Rows.RemoveAt(letzezeile);
+
+                int ausgewähltezeile = dgv.CurrentCell.RowIndex;
+                dgv.Rows.RemoveAt(ausgewähltezeile);
             }
             else
             {
@@ -140,9 +175,25 @@ namespace To_Do_App
             SaveData();
         }
 
+        private void cmdedit_Click(object sender, EventArgs e)
+        {
+            if (dgv.CurrentRow != null)
+            {
+                if (!string.IsNullOrWhiteSpace(textBox1.Text) && !string.IsNullOrWhiteSpace(textBox2.Text) && !string.IsNullOrWhiteSpace(comboBox1.Text) && comboBox1.Text != "Kategorie Auswählen" && dateTimePicker1.Value >= DateTime.Now.AddDays(-1))
+                {
+                    dgv.CurrentRow.Cells["titel"].Value = textBox1.Text;
+                    dgv.CurrentRow.Cells["beschreibung"].Value = textBox2.Text;
+                    dgv.CurrentRow.Cells["kategorie"].Value = comboBox1.Text;
+                    dgv.CurrentRow.Cells["datum"].Value = dateTimePicker1.Text;
 
+                }
+                else
+                {
+                    Spaltenabfrage();
+                }
 
-
+            }
+        }
 
 
     }
